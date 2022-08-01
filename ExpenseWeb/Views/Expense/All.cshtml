@@ -1,0 +1,116 @@
+﻿ @model IEnumerable<MExpense>
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1>All</h1>
+
+<div class="container bg-info"> 
+
+
+    @using(Html.BeginForm("Index","Expense",FormMethod.Get))
+{
+
+    <label style="padding: 1px 1px 1px  1px " class="text-white h5 ">@DateTime.Now </label>
+
+
+            <div class="row">
+
+                                             <div class="" >
+                                               <label  style="padding: 30px 0px 30px 50px " class="text-white h1 ">Amount </label>
+                                             <label  Name="lb" id="lb" style="padding: 50px 50px 30px 20px "  class="text-white h1 ">@ViewBag.Total</label>
+                
+                                             
+                                             
+                                             
+                                              
+                                             
+                                             
+            </div>    
+            
+
+                             <div class=" position-absolute top-10 start-50 " style="margin-left:300px ; width:250px; background-color:#2871CC" > 
+
+                                        <div class=" "> 
+                                                   <label class="text-white h3  " style="padding:0px 0px 10px 0px">Income</label>
+                                                   <label  class="text-white h3 " style="padding:10px  10px 10px 20px">@ViewBag.income</label>
+         
+                                        </div>
+                                        <div class=" "> 
+
+                                                   <label class="text-white h3 " style="padding:0px 0px 10px 0px">Expense</label>
+                                                   <label class="text-white h3 " style="padding:10px 10px 10px 10px">@ViewBag.expence</label>
+         
+                                         </div>
+         
+                              </div>
+            
+                             
+              </div>
+
+
+          
+    } 
+    
+ 
+
+</div>
+ <div class="p-3 " >
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th class="align-content-center">Action</th>
+                </tr>
+                
+
+
+            </thead>
+            <tbody>
+                
+                @foreach(var obj in Model){
+                   
+                <tr>
+                    <td>@obj.Category</td>
+                    <td>@obj.Amount</td>
+                    <td>@obj.Type</td>
+                    <td>@obj.Date.Day</td>
+                    <td>@obj.Date.TimeOfDay</td>
+                    <td>
+                        <Div class="w-25 btn btn-group " role="group">
+                            <a asp-controller="Expense" asp-action="Edit" asp-route-id="@obj.Id"
+                            class="btn btn btn-primary mx-2"
+                            
+                            >
+                               <i class="bi bi-pen"></i>
+                               Edite
+
+
+                            </a>
+
+                        </Div>
+                        <Div class="w-25 btn btn-group " role="group">
+                            <a asp-controller="Expense" asp-action="Delete" asp-route-id="@obj.Id"
+                            class="btn btn btn-danger mx-2"
+                            
+                            >
+                               <i class="bi bi-pen"></i>
+                               Delete
+
+
+                            </a>
+
+                        </Div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>

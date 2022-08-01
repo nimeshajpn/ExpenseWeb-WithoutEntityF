@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<div class="container border border-2 " style="width:300px" >
+
+<form class="" method="post">
+
+    <div class="container  " style="margin-left:80px" >
+        <h1 class="p-2">Add</h1>
+    </div>
+
+
+
+    <div class="mb-3">
+
+        <label>Amount</label >
+        <input name="Amount" value="" style="" class="form-control" />
+    </div>
+    <div class="mb-3">
+
+        <label>Category</label>
+       <select class="form-control" name="Category">
+
+           <option>Food</option>
+           <option>Clothing</option>
+           <option>Fruits</option>
+           <option>Shopping</option>
+           <option>Transport</option>
+           <option>Home</option>
+           <option>Pet</option>
+           <option>Others</option>
+
+
+
+       </select>
+    </div>
+
+    <div class="mb-3">
+
+        <label>Type</label>
+         <select class="form-control" name="Type">
+
+           <option>Income</option>
+           <option>Expense</option>
+       
+           
+
+
+       </select>
+    </div>
+    <div class="mb-3">
+
+        <label>Date</label>
+        <input name="Date" value="@DateTime.Now"  class="form-control" />
+    </div>
+    <div class="mb-3">
+
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+</div>
